@@ -1,0 +1,29 @@
+NEBULA per Android - come ottenere l'APK solo dal telefono
+
+1. Su github.com crea un repository nuovo (anche privato), es. "nebula-android".
+2. "Add file" -> "Upload files": carica TUTTO il contenuto di questo zip
+   (estrailo prima; la cartella nascosta .github deve esserci, altrimenti crea a mano
+   il file .github/workflows/build.yml con il contenuto fornito).
+3. Vai nella scheda "Actions": parte da sola "Build APK" (3-5 minuti).
+4. A fine build apri l'esecuzione -> in fondo "Artifacts" -> scarica "Nebula-APK" (zip con app-debug.apk).
+5. Estrai l'APK, aprilo e consenti "Installa app sconosciute".
+6. Apri Nebula, concedi i permessi, incolla la chiave API e tocca "Gestisci chiamate".
+
+Se la build fallisce, copiami l'errore dal log di Actions e lo correggo.
+
+Limiti di Android sulle chiamate: nessuna app normale puo' registrare la voce dell'altro
+interlocutore ne' parlare dentro la chiamata. Nebula puo' annunciare chi chiama, rispondere,
+rifiutare. Alcuni produttori (Xiaomi, Samsung, Huawei) chiudono i servizi in background:
+disattiva il risparmio energetico per Nebula.
+
+SEGRETERIA INTELLIGENTE (novita')
+Impostazioni -> attiva "Segreteria intelligente", scrivi il tuo nome, scegli dopo quanti secondi
+di squillo deve rispondere, salva, poi tocca "Attiva chiamate" (la notifica deve restare visibile).
+Nebula risponde, si presenta come assistente virtuale, offre: 1 messaggio, 2 richiamata, 3 parlare con lei.
+Alla fine riattacca, ti manda una notifica e salva tutto in "Registro chiamate".
+
+TEST CONSIGLIATO: fatti chiamare da un altro telefono prima di fidarti.
+Nota tecnica: Android non da' alle app normali l'audio della chiamata. Nebula risponde in vivavoce:
+la sua voce esce dall'altoparlante e il microfono la porta all'interlocutore (e viceversa). Su
+alcuni telefoni il microfono viene silenziato durante le chiamate: in tal caso Nebula parla
+ma non sente la risposta.
